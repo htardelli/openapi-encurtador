@@ -1,14 +1,14 @@
 {
-  "openapi": "3.0.0",
+  "openapi": "3.1.0",
   "info": {
-    "title": "API de Encurtamento de Links",
+    "title": "Encurtador TinyURL",
     "version": "1.0.0"
   },
   "paths": {
     "/api/encurtar": {
       "post": {
-        "summary": "Encurta um link usando a API TinyURL do usuário",
         "operationId": "encurtarLink",
+        "summary": "Encurta um link usando TinyURL",
         "requestBody": {
           "required": true,
           "content": {
@@ -18,7 +18,7 @@
                 "properties": {
                   "url": {
                     "type": "string",
-                    "description": "O link longo que será encurtado"
+                    "description": "URL completa a ser encurtada"
                   }
                 },
                 "required": ["url"]
@@ -35,7 +35,8 @@
                   "type": "object",
                   "properties": {
                     "encurtado": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "URL encurtada final"
                     }
                   }
                 }
@@ -47,4 +48,3 @@
     }
   }
 }
-
